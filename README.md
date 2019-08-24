@@ -29,14 +29,14 @@ I will focus on issues taken from one of real-life projects I worked on. I don't
 	
 	
 ### Milestones:
-	* Some frontend page with state
-	* Basic SSR
-	* Unit tests reports for both sides
-	* Quick rebuilding and reloading code in dev mode
-	* Waiting with server responses until rebuild is completed
-	* Caching files with service workers
-	* Connecting nodejs console to chrome
-	* Component tests
-	* Generating test reports
-	* Offline app
-	* Isomorphic code for frontend and server side
+* Some frontend page with state
+* Basic SSR
+* Unit tests reports for both sides
+* Quick rebuilding and reloading code in dev mode
+* Waiting with server responses until rebuild is completed
+* Caching files with service workers
+* Connecting nodejs console to chrome
+* Component tests
+* Generating test reports
+* Offline app
+* Isomorphic code for frontend and server side
