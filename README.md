@@ -1,15 +1,15 @@
 # simple-ssr-frontend
 
-##Motivation
+## Motivation
 
 As developer Iwant to have great react app with SSR template, which can be used for creating scalable, fast and friendly in development apps.
 In this repo I'll try to create simple frontend, but friendly for further development.
 
 I will focus on issues taken from one of real-life projects I worked on. I don't want to use complex frameworks and I don't want to create one - my goal is just to find simple solutions, which could be taken and adapted. 
 
-##Proof of concept
+## Proof of concept
 
-###Goals:
+### Goals:
 * Performance
 	* Can app respond with rendered HTML?
 	* Do app serve properly cached content?
@@ -28,7 +28,7 @@ I will focus on issues taken from one of real-life projects I worked on. I don't
 	* Is it possible to generate docs from server side tests?
 	
 	
-###Milestones:
+### Milestones:
 	* Some frontend page with state
 	* Basic SSR
 	* Unit tests reports for both sides
