@@ -29,7 +29,7 @@ I will focus on issues taken from one of real-life projects I worked on. I don't
 	
 	
 ### Milestones:
-* Some frontend page with state
+* Some frontend page with state [x]
 * Basic SSR
 * Unit tests reports for both sides
 * Quick rebuilding and reloading code in dev mode

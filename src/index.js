@@ -1,5 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './webapp/App';
+import App from './webapp/App.jsx';
 
-ReactDOM.render(<App />, document.getElementById('app-container'));
+const container = document.getElementById('app-container');
+const application = new App({
+    container,
+});
+
+application.init();
