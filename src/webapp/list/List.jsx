@@ -1,12 +1,18 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Form from '../form/Form.jsx';
 import Item from './Item.jsx';
+import ListActions from './ListActions';
 import { getStateRoot } from './listReducer';
 
 const List = () => {
     const items = useSelector(getStateRoot);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(ListActions.loadItems());
+    }, [dispatch]);
 
     return (
         <main>

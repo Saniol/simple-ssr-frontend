@@ -2,7 +2,7 @@
 
 ## Motivation
 
-As developer Iwant to have great react app with SSR template, which can be used for creating scalable, fast and friendly in development apps.
+As developer I want to have great react app with SSR template, which can be used for creating scalable, fast and friendly in development apps.
 In this repo I'll try to create simple frontend, but friendly for further development.
 
 I will focus on issues taken from one of real-life projects I worked on. I don't want to use complex frameworks and I don't want to create one - my goal is just to find simple solutions, which could be taken and adapted. 

@@ -8,7 +8,7 @@ const Item = (props) => {
     const { idx, item } = props;
     const dispatch = useDispatch();
     const remove = useCallback(
-        () => dispatch(ListActions.removeItem(idx)),
+        () => dispatch(ListActions.eraseItem(idx)),
         [dispatch, idx],
     );
     const removeOnEnterKey = (evt) => {

@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import App from './webapp/App.jsx';
 
 const container = document.getElementById('app-container');

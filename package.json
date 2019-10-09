@@ -4,6 +4,7 @@
   "description": "Some React app with SSR",
   "main": "src/index.js",
   "scripts": {
+    "server": "./node_modules/.bin/nodemon ./src/server/index.js",
     "dev": "./node_modules/.bin/webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,7 +24,11 @@
   },
   "homepage": "https://github.com/Saniol/simple-ssr-frontend#readme",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "immutable": "^4.0.0-rc.12",
+    "nodemon": "^1.19.3",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",

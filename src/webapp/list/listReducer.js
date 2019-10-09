@@ -14,6 +14,16 @@ const addItem = (action, state) => {
     return state.push(Immutable.Map(action.item));
 };
 
+const addMultipleItems = (action, state) => {
+    if (!Array.isArray(action.items)) {
+        // eslint-disable-next-line no-console
+        console.error('invalid action - items should be an array');
+        return state;
+    }
+
+    return state.merge(Immutable.fromJS(action.items));
+};
+
 const removeItem = (action, state) => {
     if (action.idx == null) {
         // eslint-disable-next-line no-console
@@ -30,6 +40,8 @@ export const listReducer = (state = initState, action) => {
     switch (type) {
     case 'LIST_ADD_ITEM':
         return addItem(action, state);
+    case 'LIST_ADD_MULTIPLE_ITEMS':
+        return addMultipleItems(action, state);
     case 'LIST_REMOVE_ITEM':
         return removeItem(action, state);
     default:

@@ -10,7 +10,7 @@ const confirmForm = () => (dispatch, getState) => {
     const formState = getStateRoot(getState());
 
     dispatch(
-        ListActions.addItem({
+        ListActions.createItem({
             name: formState.get('name'),
         }),
     );
