@@ -31,7 +31,7 @@ I will focus on issues taken from one of real-life projects I worked on. I don't
 ### Milestones:
 * Some frontend page with state :white_check_mark:
 * Basic API to keep data :white_check_mark:
-* Basic SSR
+* Basic SSR :white_check_mark:
 * Unit tests reports for both sides
 * Quick rebuilding and reloading code in dev mode
 * Waiting with server responses until rebuild is completed
