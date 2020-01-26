@@ -6,6 +6,7 @@
   "scripts": {
     "server": "./node_modules/.bin/nodemon ./src/server/index.js",
     "web": "./node_modules/.bin/webpack-dev-server",
+    "dev": "npx concurrently --kill-others npm:web npm:server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,8 +25,8 @@
   },
   "homepage": "https://github.com/Saniol/simple-ssr-frontend#readme",
   "dependencies": {
-    "@babel/register": "^7.8.3",
     "babel-polyfill": "^6.26.0",
+    "concurrently": "^5.0.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "hbs": "^4.1.0",
@@ -44,6 +45,7 @@
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
+    "@babel/register": "^7.8.3",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "eslint": "^6.8.0",
@@ -53,6 +55,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^2.3.0",
+    "http-proxy-middleware": "^0.20.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"

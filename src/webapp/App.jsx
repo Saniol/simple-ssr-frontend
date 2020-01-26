@@ -47,7 +47,10 @@ class WebApp {
 
     init() {
         // eslint-disable-next-line no-underscore-dangle
-        const preloadedState = JSON.parse(window.__PRELOADED_STATE__);
+        const preloadedState = window.__PRELOADED_STATE__
+        // eslint-disable-next-line no-underscore-dangle
+            ? JSON.parse(window.__PRELOADED_STATE__)
+            : undefined;
         this.createStore(preloadedState);
 
         ReactDOM.render(this.render(BrowserRouter), this.container);
