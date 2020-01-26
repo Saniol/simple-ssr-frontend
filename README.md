@@ -31,14 +31,14 @@ I will focus on issues taken from one of real-life projects I worked on. I don't
 ### Milestones:
 * Some frontend page with state :white_check_mark:
 * Basic API to keep data :white_check_mark:
+* Connecting nodejs console to chrome :white_check_mark:
 * Basic SSR :white_check_mark:
-* Unit tests reports for both sides
 * Quick rebuilding and reloading code in dev mode :white_check_mark:
 * Waiting with server responses until rebuild is completed :white_check_mark:
+* Isomorphic code for frontend and server side :white_check_mark:
 * Proper production build
+* Unit tests reports for both sides
 * Caching files with service workers
-* Connecting nodejs console to chrome :white_check_mark:
 * Component tests
 * Generating test reports
 * Offline app
-* Isomorphic code for frontend and server side :white_check_mark:
