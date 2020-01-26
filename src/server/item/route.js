@@ -20,9 +20,9 @@ const deleteItem = (req, res) => {
 };
 
 const applyRoutes = (app) => {
-    app.get('/items', getAllItems);
-    app.post('/items', addItem);
-    app.delete('/items/:idx', deleteItem);
+    app.get('/api/items', getAllItems);
+    app.post('/api/items', addItem);
+    app.delete('/api/items/:idx', deleteItem);
 };
 
 module.exports = {

@@ -12,7 +12,7 @@ export default () => (
                 <Link to="/page1">Page 1</Link>
             </li>
             <li>
-                <Link to="/page1">Page 1</Link>
+                <Link to="/page2">Page 2</Link>
             </li>
             <li>
                 <Link to="/list">List</Link>

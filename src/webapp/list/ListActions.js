@@ -1,6 +1,6 @@
 import { getStateRoot } from './listReducer';
 
-const apiUrl = 'http://localhost:3000/items';
+const apiUrl = 'http://localhost:3000/api/items';
 
 const addItem = (item) => ({
     type: 'LIST_ADD_ITEM',
