@@ -3,49 +3,60 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Hello from './hello/Page.jsx';
 import Page1 from './page1/Page.jsx';
 import Page2 from './page2/Page.jsx';
 import List from './list/List.jsx';
 import appReducer from './appReducer';
+import { addPreloadedRoute } from './StaticDataLoader';
 
 class WebApp {
-    constructor(config) {
+    constructor(config = {}) {
         const { container } = config;
 
         this.container = container;
     }
 
-    createStore() {
+    createStore(preloadedState) {
         this.store = createStore(
             appReducer,
+            preloadedState,
             applyMiddleware(
                 thunkMiddleware,
             ),
         );
+
+        return this.store;
+    }
+
+    render(Router, routerProps) {
+        return (
+            <Provider store={this.store}>
+                <Router {...routerProps}>
+                    <Switch>
+                        <Route exact path="/" component={Hello} />
+                        <Route path="/page1" component={Page1} />
+                        <Route path="/page2" component={Page2} />
+                        <Route path="/list" component={List} />
+                    </Switch>
+                </Router>
+            </Provider>
+        );
     }
 
     init() {
-        this.createStore();
+        // eslint-disable-next-line no-underscore-dangle
+        const preloadedState = JSON.parse(window.__PRELOADED_STATE__);
+        this.createStore(preloadedState);
 
-        ReactDOM.render((
-            <Provider store={this.store}>
-                <App />
-            </Provider>
-        ), this.container);
+        ReactDOM.render(this.render(BrowserRouter), this.container);
     }
 }
 
-const App = () => (
-    <Router>
-        <Switch>
-            <Route exact path="/" component={Hello} />
-            <Route path="/page1" component={Page1} />
-            <Route path="/page2" component={Page2} />
-            <Route path="/list" component={List} />
-        </Switch>
-    </Router>
+addPreloadedRoute(
+    { path: '/list' },
+    List.loadData,
 );
 
 export default WebApp;

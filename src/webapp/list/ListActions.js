@@ -1,5 +1,7 @@
 import { getStateRoot } from './listReducer';
 
+const fetch = typeof window !== 'undefined' ? window.fetch : global.fetch;
+
 const apiUrl = 'http://localhost:3000/api/items';
 
 const addItem = (item) => ({
@@ -22,7 +24,7 @@ const createItem = (item) => (
         dispatch(addItem(item));
 
         try {
-            const response = await window.fetch(apiUrl, {
+            const response = await fetch(apiUrl, {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json',
@@ -51,7 +53,7 @@ const eraseItem = (itemIdx) => (
         dispatch(removeItem(itemIdx));
 
         try {
-            const response = await window.fetch(`${apiUrl}/${itemIdx}`, {
+            const response = await fetch(`${apiUrl}/${itemIdx}`, {
                 method: 'delete',
                 headers: {
                     'Content-Type': 'application/json',
@@ -70,7 +72,7 @@ const eraseItem = (itemIdx) => (
 const loadItems = () => (
     async (dispatch) => {
         try {
-            const response = await window.fetch(apiUrl, {
+            const response = await fetch(apiUrl, {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json',
@@ -82,8 +84,6 @@ const loadItems = () => (
             }
 
             const items = await response.json();
-
-            console.log(items);
 
             dispatch(addMultipleItems(items));
         } catch (err) {

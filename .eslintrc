@@ -21,5 +21,6 @@
             "error",
             4
         ],
+        "react/jsx-props-no-spreading": 0
     }
 }

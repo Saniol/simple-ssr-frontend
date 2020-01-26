@@ -11,8 +11,10 @@ const List = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(ListActions.loadItems());
-    }, [dispatch]);
+        if (!items.count()) {
+            dispatch(ListActions.loadItems());
+        }
+    }, [dispatch, items]);
 
     return (
         <main>
@@ -32,5 +34,7 @@ const List = () => {
         </main>
     );
 };
+
+List.loadData = ListActions.loadItems;
 
 export default List;

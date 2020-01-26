@@ -4,6 +4,8 @@ export const getStateRoot = (state) => state.list;
 
 const initState = Immutable.List();
 
+const restoreFromJSON = (state) => Immutable.fromJS(state);
+
 const addItem = (action, state) => {
     if (!action.item) {
         // eslint-disable-next-line no-console
@@ -36,6 +38,10 @@ const removeItem = (action, state) => {
 
 export const listReducer = (state = initState, action) => {
     const { type } = action;
+
+    if (!Immutable.isList(state)) {
+        return restoreFromJSON(state);
+    }
 
     switch (type) {
     case 'LIST_ADD_ITEM':
